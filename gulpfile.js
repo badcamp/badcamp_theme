@@ -8,6 +8,7 @@ const postcss = require('gulp-postcss');
 const sass = require('gulp-sass');
 const sassGlob = require('gulp-sass-glob');
 const sourcemaps = require('gulp-sourcemaps');
+const stripCssComments = require('gulp-strip-css-comments');
 const uglify = require('gulp-uglifyjs');
 
 // Configuration.
@@ -35,6 +36,7 @@ function css(done) {
     .pipe(sassGlob())
     .pipe(sass())
     .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(stripCssComments({preserve: false}))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(config.sass.destDir))
     .pipe(browsersync.stream());
@@ -59,7 +61,7 @@ function watch() {
   gulp.watch(config.js.watchFiles, gulp.series(js));
 }
 
-// Default task
+// Default task.
 const start = gulp.series(compile, watch);
 
 exports.css = css;

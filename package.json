@@ -12,20 +12,16 @@
     "browser-sync": "^2.26.14",
     "cssnano": "^4.1.10",
     "gulp": "^4.0.2",
-    "gulp-imagemin": "^5.0.3",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sass-glob": "^1.0.9",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-strip-css-comments": "^1.2.0",
-    "gulp-svg-sprite": "^1.4.0",
     "gulp-uglifyjs": "^0.6.2",
-    "gulp-watch": "^5.0.1",
-    "imagemin-pngquant": "^6.0.0"
+    "gulp-watch": "^5.0.1"
   },
   "dependencies": {
-    "foundation-sites": "^6.6.3",
-    "motion-ui": "^1"
+    "foundation-sites": "^6.6.3"
   }
 }
