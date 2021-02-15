@@ -1,0 +1,38 @@
+{
+    "name": "badcamp/badcamp_theme",
+    "description": "Drupal theme for badcamp.org.",
+    "type": "drupal-theme",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mel-miller",
+            "email": "miller.2676@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "composer/installers": "^1.10"
+    },
+    "require-dev": {
+        "drupal/twig_vardumper": "^2.2"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "rm -rf vendor/",
+            "rm -rf core/",
+            "rm -rf modules"
+        ],
+        "post-update-cmd": [
+            "rm -rf vendor/",
+            "rm -rf core/",
+            "rm -rf modules"
+        ]
+    }
+}
