@@ -1,0 +1,51 @@
+{% set venue = content.field_venue|render|striptags|trim %}
+{% set event_link = content.field_link_to_event|render|striptags|trim %}
+
+
+<article{{attributes.addClass('my-schedule-display')}}>
+	<div{{content_attributes}}>
+
+		<h4 {{title_attributes.addClass('schedule-title')}}>
+			<a href="{{ url }}" rel='bookmark'>{{ label }}</a>
+		</h4>
+
+		<div class='event-details-inline'>
+			{% if venue is not empty %}
+				<div class='event-details-inline__field event-details-inline__field--venue'>
+					<span>
+						<i class='fa fa-map-marker' aria-hidden='true'></i>
+					</span>
+					{% if venue == 'Hopin' or venue == 'Zoom' %}
+						{% if event_link is not empty %}
+							{% set location = event_link %}
+						{% else %}
+							{% if content_type == 'summit' %}
+								{% set location = 'https://hopin.to/events/badcamp-2020-trainings-summits' %}
+							{% else %}
+								{% set location = 'https://hopin.to/events/badcamp-2020-sessions' %}
+							{% endif %}
+						{% endif %}
+						<a href="{{ location }}" target='_blank'>
+							{{ content.field_venue }}
+							<span class='visually-hidden'>(link is external)</span>
+						</a>
+					{% else %}
+						<span>{{ content.field_venue }}</span>
+					{% endif %}
+				</div>
+			{% endif %}
+		</div>
+
+		{% if content.field_live_captioned|render|striptags|trim == 'Yes' %}
+			<div class='event-details-inline__field event-details-inline__field--cc'>
+				<span>
+					<i class='fa fa-cc' aria-hidden='true'></i>
+				</span>
+				<span>
+					This session will be live captioned
+				</span>
+			</div>
+		{% endif %}
+
+	</div>
+</article>

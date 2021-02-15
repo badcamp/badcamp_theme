@@ -1,0 +1,45 @@
+.job-postings__listings {
+  margin-top: 2.5em;
+  .views-row {
+    margin-bottom: 1.875em;
+    border-top: 1px solid $medium-gray;
+    padding-top: 1.5em;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      @extend .views-teaser-h2;
+    }
+  }
+}
+
+.job-posting__title {
+  font-size: rem-calc(28);
+}
+
+.job-posting__display--teaser {
+  .job-posting__sponsor-logo {
+    text-align: center;
+    .node--view-mode-sponsor-logo .sponsor-logo img {
+      max-width: 240px;
+    }
+  }
+}
+
+//node
+.job-posting__apply-link {
+  font-family: $monsterrat;
+  a {
+    @extend .link;
+  }
+}
+
+.page-node--66 .job-postings__listings {
+  border-top: 1px solid $medium-gray;
+}

@@ -1,0 +1,53 @@
+.user__display--full {
+  clear: both;
+  padding-bottom: 30px;
+}
+
+.user__attendee-picture {
+  @include breakpoint('medium') {
+    float: right;
+    margin: -70px 6px 18px 18px;
+  }
+}
+
+.user__attendee-name {
+  @extend .attendee-name;
+  font-size: rem-calc(27);
+  margin-top: 0.75em;
+  display: block;
+  .first-name {
+    float: left;
+    margin-right: 8px;
+  }
+}
+
+.user__attendee-org {
+  @extend .attendee-name;
+  font-size: rem-calc(18);
+  margin-top: 0.25em;
+  font-weight: 600;
+  .user-title,
+  .separator {
+    float: left;
+    margin-right: 4px;
+  }
+}
+
+.user__attendee-bio {
+  margin: 1.5em 0 2em;
+}
+
+.user__attendee-social {
+  .social-media-links--platforms {
+    justify-content: flex-start;
+    margin-top: 20px;
+    li {
+      margin-right: 18px;
+      margin-left: 0 !important;
+    }
+  }
+}
+
+.filter-wrapper {
+  display: none;
+}

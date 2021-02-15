@@ -1,0 +1,40 @@
+footer {
+  .footer-lower-wrapper {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    // LR padding set via .grid-container
+  }
+  #block-bay-area-camp-builtbythecommunity {
+    p {
+      text-align: center;
+      font-family: $fairplex-wide;
+      font-size: 1.125em;
+      @include breakpoint("medium") {
+        text-align: right;
+      }
+    }
+  }
+
+  #block-footerbanner {
+    display: none;
+    @include breakpoint("medium") {
+      display: block;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+#block-seeyouinoctober {
+  p {
+    text-align: center;
+    font-family: $monsterrat;
+    font-weight: 700;
+    font-size: 1.125rem;
+
+    @include breakpoint("medium") {
+      text-align: left;
+    }
+  }
+}

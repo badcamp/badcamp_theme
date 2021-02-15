@@ -1,0 +1,67 @@
+@mixin button($bg: $lightblue, $color: $navy, $size: regular) {
+  @include border-radius(25px);
+  border: 0;
+  font-family: $monsterrat;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  background-color: $bg;
+  color: $color;
+  @if $size == big {
+    font-size: 1.125rem;
+    padding: 1rem;
+  } @else if $size == regular {
+    font-size: 0.9375rem;
+  } @else {
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  &:hover {
+    color: $color;
+    border-bottom: 0;
+    @if $bg == $salmon {
+      background-color: lighten($bg, 4%);
+    } @else if $bg == $grayish {
+      background-color: darken($bg, 7%);
+    } @else if $bg == $navy {
+      background-color: lighten($bg, 6%);
+    } @else {
+      background-color: lighten($bg, 7%);
+    }
+  }
+  &:focus,
+  &:active {
+    outline: none;
+    @if $bg == $navy {
+      border: 2px dotted $lightblue;
+    } @else {
+      border: 2px dotted $navy;
+    }
+  }
+}
+
+.button,
+.button.primary {
+  @include button();
+}
+.button.gray {
+  @include button($grayish, $navy, regular);
+}
+.button.tealish {
+  @include button($tealish, $navy, regular);
+}
+.small-button {
+  @include button($size: small);
+}
+.small-button.navy {
+  @include button($navy, $white, small);
+}
+.big-button {
+  @include button($size: big);
+}
+.big-button.salmon {
+  @include button($salmon, $navy, big);
+}
+.big-button.tealish {
+  @include button($tealish, $navy, big);
+}

@@ -1,0 +1,13 @@
+{% if title %}
+	<h3 class='my-schedule__time-slot'>{{ title }}</h4>
+{% endif %}
+{% for row in rows %}
+	{%
+    set row_classes = [
+      default_row_class ? 'views-row',
+    ]
+  %}
+	<div{{row.attributes.addClass(row_classes)}}>
+		{{- row.content -}}
+	</div>
+{% endfor %}

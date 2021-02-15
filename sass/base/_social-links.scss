@@ -1,0 +1,55 @@
+.social-media-links--platforms {
+  margin-top: 25px;
+  margin-bottom: 0;
+  margin-left: 0;
+  text-align: center;
+  display: flex;
+  padding: 0 5px;
+  justify-content: space-between;
+  @include breakpoint('medium') {
+    text-align: right;
+    padding: 0;
+    margin-top: 5px;
+    justify-content: flex-end;
+  }
+
+  li {
+    list-style: none;
+    text-align: center;
+    @include breakpoint('medium') {
+      margin: 0 7px;
+    }
+    @include breakpoint('large') {
+      margin: 0 10px;
+    }
+  }
+
+  a {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: $grayish;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: darken($grayish, 5%);
+    }
+
+    &:focus,
+    &:active {
+      outline: 0;
+      border: 2px dotted $navy;
+    }
+  }
+
+  .fa {
+    font-size: 1.5em;
+    display: inline-block;
+  }
+}
+
+#block-socialmedialinks-2 {
+  margin-top: 25px;
+}

@@ -1,0 +1,90 @@
+p {
+  font-size: rem-calc(18);
+  line-height: rem-calc(28);
+}
+
+.main-contents {
+  li,
+  ol {
+    font-size: rem-calc(18);
+    line-height: rem-calc(28);
+  }
+}
+
+// reuseable classes from styleguide and beyond
+.separator {
+  font-family: $monsterrat;
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+.icon-text {
+  font-family: $fairplex-wide;
+  font-size: rem-calc(22);
+  line-height: rem-calc(26);
+}
+
+.paragraph-large {
+  font-family: $fairplex-wide;
+  font-size: rem-calc(22);
+  line-height: rem-calc(34);
+}
+
+.attendee-name {
+  font-family: $monsterrat;
+  font-weight: bold;
+  font-size: rem-calc(20);
+  line-height: 1.3;
+
+  a:hover {
+    color: $midblue;
+  }
+}
+
+.attendee-name--small {
+  @extend .attendee-name;
+  font-size: rem-calc(16);
+}
+
+.attendee-info {
+  font-family: $fairplex-wide;
+  font-size: rem-calc(18);
+  line-height: rem-calc(24);
+}
+
+.views-group-header {
+  font-size: rem-calc(24);
+  @include breakpoint("medium") {
+    font-size: rem-calc(30);
+  }
+}
+
+.views-teaser-h2 {
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+  a:hover {
+    color: $midblue;
+  }
+}
+
+.teaser-title {
+  a:hover {
+    color: $midblue;
+  }
+}
+
+.field-label {
+  font-family: $monsterrat;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+// TODO: make better. Quick fixes for now.
+.body,
+.article__body {
+  h2,
+  h3,
+  h4 {
+    padding-top: 24px;
+  }
+}

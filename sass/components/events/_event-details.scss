@@ -1,0 +1,72 @@
+.event-details__box {
+  margin-bottom: 1em;
+  font-family: $monsterrat;
+  font-weight: 600;
+
+  a {
+    @extend .bold-link;
+  }
+}
+
+.event-details__inner {
+  background: $grayish;
+  padding: 0.75em 1.25em;
+}
+
+.field__add__to__schedule {
+  margin-top: 1.5em;
+}
+.flag-add-to-schedule {
+  i {
+    margin-right: 10px;
+  }
+}
+.event-details__field,
+.event-details-inline__field {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  i {
+    color: $dark-salmon;
+    font-size: 1.25em;
+    width: 1em;
+    text-align: center;
+    margin-right: 0.75em;
+  }
+  a {
+    border-bottom: 2px solid $lightblue;
+    &:hover {
+      border-bottom: 2px solid $dark-salmon;
+      text-decoration: none;
+    }
+  }
+}
+
+.event-details-inline__field--cc {
+  .fa-cc {
+    margin-right: 0.75em;
+  }
+}
+
+.event-details__field--venue,
+.event-details__field--topics,
+.event-details__field--cc {
+  line-height: 1.25;
+}
+
+.event-attachments {
+  padding-top: 2em;
+  .field-label {
+    color: $dark-salmon;
+    font-weight: 700;
+    font-size: rem-calc(20);
+  }
+  a {
+    @extend .link;
+    line-height: 1.8 !important;
+  }
+  .event-attachment--links,
+  .event-attachment--slides {
+    margin-bottom: 2.5em;
+  }
+}

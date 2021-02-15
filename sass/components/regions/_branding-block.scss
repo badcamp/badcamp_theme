@@ -1,0 +1,63 @@
+.branding-block {
+  > a {
+    display: block;
+  }
+}
+// If logged in
+.user-logged-in {
+  .branding-block {
+    @include breakpoint('medium') {
+      margin-top: -10px;
+    }
+  }
+}
+.branding-wrapper {
+  .logo-wrapper {
+    margin-right: 1em;
+    max-width: 76px;
+    transition: transform 0.2s;
+    @include breakpoint('xlarge') {
+      max-width: 92px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  .title-wrapper {
+    font-family: $monsterrat;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    .title {
+      font-size: 2rem;
+      margin-bottom: 3px;
+
+      @include breakpoint('medium') {
+        font-size: 2.5rem;
+      }
+      @include breakpoint('large') {
+        font-size: 4.25rem;
+      }
+    }
+  }
+
+  .subtitle {
+    line-height: 1.3;
+    font-size: 18px;
+    .location,
+    .location-date {
+      font-size: 1rem;
+      display: block;
+      @include breakpoint('large') {
+        display: inline-block;
+      }
+    }
+    .separator {
+      display: none;
+      @include breakpoint('large') {
+        display: inline-block;
+      }
+    }
+  }
+}

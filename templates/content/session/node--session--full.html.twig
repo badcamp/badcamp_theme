@@ -1,0 +1,102 @@
+<article{{attributes.addClass('session__display--full')}}>
+	<div{{content_attributes}}>
+
+		<div class='grid-x grid-margin-x'>
+
+			<div class='session__body cell small-order-2 medium-7 large-9'>
+				{{ content.body }}
+				<div class='event-attachments'>
+					{% if content.field_session_slides|render|striptags|trim is not empty %}
+						<div class='event-attachment--slides'>
+							<div class='field-label'>{{ "Session Slides"|t }}</div>
+							{{ content.field_session_slides }}
+						</div>
+					{% endif %}
+					{% if content.field_session_presentation_video|render|striptags is not empty %}
+						<div class='event-attachment--video'>
+							<div class='field-label'>{{ "Presentation Video"|t }}</div>
+							{{ content.field_session_presentation_video }}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+
+
+			<div class='event-details__box event-details-box--session cell medium-order-2 medium-5 large-3'>
+				{% if content.field_day|render|striptags|trim is not empty %}
+					<div class='event-details__field event-details__field--day'>
+						<span>
+							<i class='fa fa-calendar' aria-hidden='true'></i>
+						</span>
+						<span>{{ content.field_day }}</span>
+					</div>
+				{% endif %}
+
+				{% if content.field_timeslot|render|striptags|trim is not empty %}
+					<div class='event-details__field event-details__field--timeslot'>
+						<span>
+							<i class='fa fa-clock-o' aria-hidden='true'></i>
+						</span>
+						<span>{{ content.field_timeslot }}</span>
+					</div>
+				{% endif %}
+
+				{% if content.field_venue|render|striptags|trim is not empty %}
+					<div class='event-details__field event-details__field--venue'>
+						<span>
+							<i class='fa fa-map-marker' aria-hidden='true'></i>
+						</span>
+						{% if content.field_venue|render|striptags|trim == 'Hopin' %}
+							{% if content.field_link_to_event|render|striptags|trim is not empty %}
+								{% set location = content.field_link_to_event|render|striptags|trim %}
+							{% else %}
+								{% set location = 'https://hopin.to/events/badcamp-2020-sessions' %}
+							{% endif %}
+							<a href="{{ location }}" target='_blank'>
+								{{ content.field_venue }}
+								<span class='visually-hidden'>(link is external)</span>
+							</a>
+						{% else %}
+							<span>{{ content.field_venue }}</span>
+						{% endif %}
+					</div>
+				{% endif %}
+
+				{% if content.field_session_topics|render|striptags|trim is not empty %}
+					<div class='event-details__field event-details__field--topics'>
+						<span>
+							<i class='fa fa-tags' aria-hidden='true'></i>
+						</span>
+						<span>{{ content.field_session_topics }}</span>
+					</div>
+				{% endif %}
+
+				{% if content.field_live_captioned|render|striptags|trim == 'Yes' %}
+					<div class='event-details__field event-details__field--cc'>
+						<span>
+							<i class='fa fa-cc' aria-hidden='true'></i>
+						</span>
+						<span>
+							This session will be live captioned
+						</span>
+					</div>
+				{% endif %}
+
+				<div class='session__add_to_schedule field__add__to__schedule'>
+					{{ content.flag_add_to_schedule }}
+				</div>
+			</div>
+		</div>
+
+		{% if content.field_members|render|striptags|trim is not empty %}
+			<div class='cell'>
+				<h2 class='callout section-callout'>{{ "Presenters" | t }}</h2>
+			</div>
+			<div class='session__presenters'>
+				{{ content.field_members }}
+			</div>
+		{% endif %}
+
+
+	</div>
+</article>

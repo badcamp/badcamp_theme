@@ -1,0 +1,58 @@
+<article{{attributes.addClass('summit__display--teaser')}}>
+	<div{{content_attributes}}>
+		<h3 {{ title_attributes.addClass('teaser-title summit__title') }}>
+			<a href="{{ url }}" rel='bookmark'>{{ label }}</a>
+		</h3>
+
+		<div class='event-details__box'>
+			{% if content.field_day|render|striptags|trim is not empty %}
+				<div class='event-details__field event-details__field--day'>
+					<span>
+						<i class='fa fa-calendar' aria-hidden='true'></i>
+					</span>
+					<span>{{ content.field_day }}</span>
+				</div>
+			{% endif %}
+
+			{% if content.field_timeslot|render|striptags|trim is not empty %}
+				<div class='event-details__field event-details__field--timeslot'>
+					<span>
+						<i class='fa fa-clock-o' aria-hidden='true'></i>
+					</span>
+					<span>{{ content.field_timeslot }}</span>
+				</div>
+			{% endif %}
+
+			{% if content.field_venue|render|striptags|trim is not empty %}
+				<div class='event-details__field event-details__field--venue'>
+					<span>
+						<i class='fa fa-map-marker' aria-hidden='true'></i>
+					</span>
+					{% if content.field_venue|render|striptags|trim == 'Hopin' or content.field_venue|render|striptags|trim == 'Zoom' %}
+						{% if content.field_link_to_event|render|striptags|trim is not empty %}
+							{% set location = content.field_link_to_event|render|striptags|trim %}
+						{% else %}
+							{% set location = 'https://hopin.to/events/badcamp-2020-trainings-summits' %}
+						{% endif %}
+						<a href="{{ location }}" target='_blank'>
+							{{ content.field_venue }}
+							<span class='visually-hidden'>(link is external)</span>
+						</a>
+					{% else %}
+						<span>{{ content.field_venue }}</span>
+					{% endif %}
+				</div>
+			{% endif %}
+
+		</div>
+
+		{{ content.body|render|striptags }}
+
+		{{ content.field_sponsors }}
+
+		<div class='session__add_to_schedule field__add__to__schedule'>
+			{{ content.flag_add_to_schedule }}
+		</div>
+
+	</div>
+</article>

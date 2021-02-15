@@ -1,0 +1,93 @@
+<article{{attributes.addClass('training__display--full')}}>
+	<div{{content_attributes}}>
+
+		<div class="grid-x grid-margin-x">
+
+			<div class="training__body cell small-order-2 medium-7 large-9">
+				{{ content.body }}
+				<div class="event-attachments">
+					{% if content.field_training_links|render|striptags|trim is not empty %}
+						<div class="event-attachment--links">
+							<div class="field-label">{{ "Links"|t }}</div>
+							{{ content.field_training_links }}
+						</div>
+					{% endif %}
+					{% if content.field_training_files|render|striptags|trim is not empty %}
+						<div class="event-attachment--files">
+							<div class="field-label">{{ "Files"|t }}</div>
+							{{ content.field_training_files }}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+
+			<div class="event-details__box event-details-box--training cell medium-order-2 medium-5 large-3">
+				<div class="event-details__inner">
+          {% if content.field_session_length|render|striptags|trim is not empty %}
+            <div class="event-details__field event-details__field--session-length">
+              <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+              <span class="visually-hidden">Session Length</span>
+              <span>{{ content.field_session_length }}</span>
+            </div>
+          {% endif %}
+
+					{% if content.field_day|render|striptags|trim is not empty %}
+						<div class="event-details__field event-details__field--day">
+							<span><i class="fa fa-calendar" aria-hidden="true"></i></span>
+              <span class="visually-hidden">Date</span>
+							<span>{{ content.field_day }}</span>
+						</div>
+						<div class="event-details__field event-details__field--timeslot">
+							<span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+              <span class="visually-hidden">Time</span>
+							<span>{{ content.field_timeslot }}</span>
+						</div>
+					{% endif %}
+
+					{% if content.field_venue|render|striptags|trim is not empty %}
+						<div class="event-details__field event-details__field--venue">
+							<span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+              <span class="visually-hidden">Location</span>
+							<span>{{ content.field_venue }}</span>
+						</div>
+					{% endif %}
+
+					<div class="event-details__field event-details__field--skill-level">
+						<span><i class="fa fa-star" aria-hidden="true"></i></span>
+            <span class="visually-hidden">Skill Level</span>
+						<span>{{ content.field_skill_level }}</span>
+					</div>
+
+					<div class="training__add_to_schedule field__add__to__schedule">
+						{% if content.field_payment|render is not empty %}
+							{{ content.field_payment }}
+						{% else %}
+							{{ content.flag_add_to_schedule }}
+						{% endif %}
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+		{% if content.field_members|render|striptags|trim is not empty %}
+			<div class="cell">
+				<h2 class="callout section-callout">{{ "Trainers" | t }}</h2>
+			</div>
+			<div class=" training__trainers">
+				{{ content.field_members }}
+			</div>
+		{% endif %}
+
+		{% if content.field_sponsors|render is not empty %}
+			<div class="cell">
+				<h2 class="callout section-callout">{{ "Sponsors" | t }}</h2>
+			</div>
+			<div class="training__sponsors">
+				{{ content.field_sponsors }}
+			</div>
+		{% endif %}
+
+	</div>
+</article>

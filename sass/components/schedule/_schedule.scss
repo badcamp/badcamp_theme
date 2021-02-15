@@ -1,0 +1,126 @@
+// Schedule Tabs
+#quicktabs-schedule {
+  .quicktabs-tabs {
+    margin: rem-calc(30 0 20);
+    padding: rem-calc(0 0 5);
+    border-bottom: 1px solid $dark-salmon;
+
+    li {
+      font-family: $monsterrat;
+      font-size: rem-calc(16);
+      font-weight: 700;
+      text-align: center;
+      margin-right: rem-calc(8);
+      margin-left: -2px;
+
+      a {
+        border-bottom: none;
+        padding: rem-calc(10 16);
+        background: $grayish;
+
+        &:hover {
+          background-color: $dark-salmon;
+          color: $white;
+        }
+      }
+
+      &.active {
+        a {
+          background-color: $dark-salmon;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+// Schedule filters.
+#views-exposed-form-schedule-general {
+  .fieldset-legend {
+    @extend .visually-hidden;
+  }
+  #edit-topics,
+  #edit-topics--2,
+  #edit-topics--3,
+  #edit-topics--4 {
+    padding: rem-calc(8 16 8 20);
+    column-count: 2;
+    @include breakpoint(large) {
+      column-count: 4;
+    }
+    @include breakpoint(xlarge) {
+      column-count: 5;
+    }
+
+    .form-item {
+      margin-bottom: 0;
+      label {
+        font-size: rem-calc(13);
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// Schedule items.
+.schedule-view {
+  .views-row {
+    margin: 0;
+    padding: rem-calc(0 16);
+    .schedule-display {
+      border-top: 1px solid #e2e2e2;
+      padding: rem-calc(16 0 8);
+    }
+  }
+
+  h3.schedule__time-slot + .views-row {
+    .schedule-display {
+      border-top: none;
+    }
+  }
+}
+
+h3.schedule__time-slot {
+  font-size: rem-calc(18);
+  font-weight: 700;
+  color: white;
+  background-color: $dark-salmon;
+  padding: rem-calc(6 12 4);
+}
+
+h4.schedule-title {
+  font-size: rem-calc(21);
+  margin-bottom: 0;
+  a:hover {
+    color: $midblue;
+  }
+}
+
+.event-details-inline {
+  display: flex;
+  margin: rem-calc(20 0 16);
+
+  .field__item {
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.event-details-inline__field {
+  font-family: $monsterrat;
+  font-weight: 600;
+  font-size: rem-calc(14);
+  display: flex;
+  margin-right: rem-calc(26);
+  i {
+    color: $dark-salmon;
+    font-size: rem-calc(16);
+    width: 1em;
+    text-align: center;
+    margin-right: rem-calc(6);
+  }
+  .separator {
+    color: $dark-salmon;
+  }
+}

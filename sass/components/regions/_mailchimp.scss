@@ -1,0 +1,51 @@
+.mailchimp-signup-subscribe-block-stay-connected-form {
+  padding: 2em 0;
+
+  @include breakpoint('medium') {
+    padding: 5em 0;
+  }
+  background-color: $lightblue;
+
+  .description {
+    font-family: $fairplex-wide;
+    font-size: 1.375em;
+    line-height: 1.55;
+    text-align: center;
+    margin: 1em 0;
+  }
+
+  .inputs {
+    position: relative;
+  }
+
+  input[type='email'] {
+    font-family: $fairplex-wide;
+    font-size: 1.125em;
+    line-height: 1.56;
+    color: $navy;
+    height: 51px;
+    margin-bottom: 0;
+    width: 100%;
+    padding-left: 15px;
+    @include breakpoint('medium') {
+      border-radius: 0 25px 25px 0;
+    }
+    &::placeholder {
+      color: $dark-gray;
+    }
+  }
+
+  input[type='submit'] {
+    @extend .big-button.salmon;
+    width: 100%;
+    margin-top: 10px;
+    @include breakpoint('medium') {
+      margin-top: 0;
+      height: 52px;
+      width: auto;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}

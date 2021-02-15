@@ -1,0 +1,11 @@
+{% import '@badcamp_theme/macros/macros.twig' as macros %}
+
+{% set menu_level_settings = [
+    {'classes': 'vertical large-horizontal menu', 'attributes': {'data-responsive-menu':'accordion large-dropdown'}},
+    {'classes': 'vertical'},
+    {'classes': 'vertical', 'prevent_dropdown': true}
+] %}
+
+{% block content %}
+    {{ macros.foundation_menu_links(items, attributes, 0, menu_level_settings) }}
+{% endblock %}

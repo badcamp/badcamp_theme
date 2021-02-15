@@ -1,0 +1,55 @@
+.link {
+  border-bottom: 3px solid $lightblue;
+  &:hover,
+  &:focus {
+    border-bottom: 3px solid $salmon;
+  }
+  &:focus {
+    outline: 1px dotted $navy;
+    outline-offset: 2px;
+  }
+}
+
+a:focus {
+  outline: 1px dotted $navy;
+  outline-offset: 2px;
+}
+
+p a {
+  @extend .link;
+}
+
+.long-text {
+  li,
+  ol {
+    a {
+      @extend .link;
+    }
+  }
+}
+
+.bold-link {
+  &:hover,
+  &:focus {
+    border-bottom: 2px solid $dark-salmon;
+  }
+  &:focus {
+    outline: 1px dotted $navy;
+    outline-offset: 2px;
+  }
+}
+
+.arrow-link {
+  font-family: $monsterrat;
+  font-weight: 600;
+  font-size: 1rem;
+  display: table-cell;
+  padding-top: 5px;
+  &:after {
+    content: url('./../images/arrow-navy.png');
+    padding-left: 7px;
+  }
+  &:hover::after {
+    content: url('./../images/arrow-navy-hover.png');
+  }
+}
