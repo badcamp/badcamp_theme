@@ -1,8 +1,7 @@
-name: Bay Area Camp
+name: BADCamp Theme
 type: theme
-description: 'General design for Bay Area Drupal Camp.'
-package: Other
-core: 8.x
+description: 'Theme for badcamp.org.'
+core_version_requirement: ^8 || ^9
 libraries:
   - badcamp_theme/global-css
   - badcamp_theme/global-js
