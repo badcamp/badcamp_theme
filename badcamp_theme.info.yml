@@ -1,6 +1,7 @@
 name: BADCamp Theme
 type: theme
 description: 'Theme for badcamp.org.'
+base theme: stable
 core_version_requirement: ^8 || ^9
 libraries:
   - badcamp_theme/global-css
